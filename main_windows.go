@@ -7,14 +7,14 @@ import (
 	"unsafe"
 )
 
-func DiskFree(path string) (uint64, error) {
+func DiskFree(path string) (uint64, uint64, error) {
 
 	c := win.MustLoadDLL("kernel32.dll").MustFindProc("GetDiskFreeSpaceExW")
 
 	pointer, err := win.UTF16PtrFromString(path)
 
 	if err != nil {
-		return 0, err
+		return 0, 0, err
 	}
 
 	var freeBytes uint64
@@ -28,7 +28,7 @@ func DiskFree(path string) (uint64, error) {
 		uintptr(unsafe.Pointer(&availBytes)))
 
 	if err != nil {
-		return 0, err
+		return 0, 0, err
 	}
-	return freeBytes, nil
+	return freeBytes, totalBytes, nil
 }

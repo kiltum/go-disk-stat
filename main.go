@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	a, _ := DiskFree(".")
-	fmt.Printf("%d", a)
+	a, t, _ := DiskStat(".")
+	fmt.Printf("%d %d", a, t)
 }
