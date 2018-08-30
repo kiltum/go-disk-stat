@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 const (
 	B  = 1
 	KB = 1024 * B
@@ -23,7 +19,7 @@ func ToGb(amount uint64) float64 {
 	return float64(amount / GB)
 }
 
-func main() {
-	a, t, _ := DiskStat(".")
-	fmt.Printf("%.2f %.2f", ToGb(a), ToMb(t))
-}
+//func main() {
+//	a, t, _ := DiskStat(".")
+//	fmt.Printf("%.2f %.2f", ToGb(a), ToMb(t))
+//}
