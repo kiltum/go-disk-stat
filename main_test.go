@@ -14,6 +14,6 @@ func TestDiskStat(t *testing.T) {
 	}
 
 	if b == 0 {
-		t.Errorf("Total  Space 0. Definitely error")
+		t.Errorf("Total Space 0. Definitely error")
 	}
 }

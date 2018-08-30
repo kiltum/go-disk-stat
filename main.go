@@ -18,8 +18,3 @@ func ToMb(amount uint64) float64 {
 func ToGb(amount uint64) float64 {
 	return float64(amount / GB)
 }
-
-//func main() {
-//	a, t, _ := DiskStat(".")
-//	fmt.Printf("%.2f %.2f", ToGb(a), ToMb(t))
-//}
