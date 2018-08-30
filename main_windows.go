@@ -7,7 +7,7 @@ import (
 	"unsafe"
 )
 
-func DiskFree(path string) (uint64, uint64, error) {
+func DiskStat(path string) (uint64, uint64, error) {
 
 	c := win.MustLoadDLL("kernel32.dll").MustFindProc("GetDiskFreeSpaceExW")
 
